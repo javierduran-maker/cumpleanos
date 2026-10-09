@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Feliz Cumpleaños!</title>
+
+<style>
+:root { --m:#5b21b6; --oscuro:#14022f; --l:#c4b5fd; --lc:#ede9fe; --r:#e11d48; --rd:#9f1239; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--oscuro);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+#fx {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Fondo con manchas de luz */
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .55;
+  z-index: 0;
+  animation: flota 14s ease-in-out infinite alternate;
+}
+
+.b1 {
+  width: 460px;
+  height: 460px;
+  background: var(--m);
+  top: -120px;
+  left: -120px;
+}
+
+.b2 {
+  width: 380px;
+  height: 380px;
+  background: var(--r);
+  bottom: -100px;
+  right: -80px;
+  animation-delay: -5s;
+}
+
+.b3 {
+  width: 320px;
+  height: 320px;
+  background: #8b5cf6;
+  top: 40%;
+  left: 55%;
+  animation-delay: -9s;
+}
+
+@keyframes flota {
+  to {
+    transform: translate(80px, 60px) scale(1.2);
+  }
+}
+
+.hero, .banda, .galeria, .mensaje {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 16px;
+  cursor: pointer;
+}
+
+.feliz {
+  letter-spacing: 14px;
+  font-weight: 300;
+  font-size: clamp(1rem, 3vw, 1.6rem);
+  color: var(--l);
+  text-transform: uppercase;
+}
+
+.titulo {
+  font-size: clamp(2.6rem, 11vw, 7.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: #fff;
+  text-shadow: 0 0 6px #fff, 0 0 20px var(--l), 0 0 42px var(--r), 0 0 84px var(--r);
+  animation: neon 3.5s infinite;
+}
+
+@keyframes neon {
+  0%,19%,21%,23%,25%,54%,56%,100% { opacity: 1; }
+  20%,24%,55% { opacity: .55; }
+}
+
+.nombre {
+  margin-top: 10px;
+  font-size: clamp(1.4rem, 5vw, 2.6rem);
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--l), #fff, var(--r));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Pastel */
+
+.pastel {
+  margin-top: 34px;
+}
+
+.velas {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.vela {
+  width: 10px;
+  height: 36px;
+  border-radius: 3px;
+  position: relative;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 6px,
+    var(--r) 6px,
+    var(--r) 12px
+  );
+}
+
+.flama {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -6px;
+  margin-bottom: 2px;
+  width: 12px;
+  height: 22px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(#fff 5%, #ffb703 45%, #ff4d00);
+  box-shadow: 0 0 18px 6px rgba(255,150,0,.6);
+  transform-origin: bottom center;
+  transition: transform .4s, opacity .4s;
+  animation: flick .18s infinite alternate;
+}
+
+@keyframes flick {
+  to {
+    transform: scale(.88, 1.08) rotate(3deg);
+  }
+}
+
+.pastel.apagado .flama {
+  opacity: 0;
+  transform: scale(0);
+  animation: none;
+}
+
+.capa {
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+.capa::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: #fff;
+  border-radius: 10px 10px 0 0;
+}
+
+.capa::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: radial-gradient(
+    circle at 10px 0,
+    #fff 8px,
+    transparent 9px
+  ) 0 0 / 20px 10px repeat-x;
+}
+
+.c3 {
+  width: 110px;
+  height: 42px;
+  background: #7c3aed;
+}
+
+.c2 {
+  width: 150px;
+  height: 46px;
+  background: var(--l);
+}
+
+.c1 {
+  width: 190px;
+  height: 52px;
+  background: var(--r);
+}
+
+.plato {
+  width: 240px;
+  height: 12px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(0,0,0,.55);
+}
+
+.btn {
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 14px 32px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--r), var(--rd));
+  box-shadow: 0 5px 0 #6b0f2a, 0 12px 26px rgba(225,29,72,.45);
+  transition: transform .15s, box-shadow .15s;
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #333;
+}
+
+.bajar {
+  margin-top: 26px;
+  color: var(--l);
+  font-size: .95rem;
+  animation: rebote 1.6s infinite;
+}
+
+@keyframes rebote {
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* ---------- Banda ---------- */
+
+.banda {
+  background: linear-gradient(90deg, var(--r), var(--rd));
+  transform: rotate(-2deg);
+  margin: 10px -30px;
+  padding: 14px 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(225,29,72,.4);
+}
+
+.banda div {
+  display: flex;
+  width: max-content;
+  animation: corre 22s linear infinite;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+}
+
+.banda span {
+  padding: 0 26px;
+  white-space: nowrap;
+}
+
+@keyframes corre {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- Galería ---------- */
+
+.galeria {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 90px 20px 60px;
+}
+
+.galeria h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
+  margin-bottom: 44px;
+  background: linear-gradient(90deg, var(--l), var(--r));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity .7s, transform .7s;
+}
+
+.item.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  padding: 4px;
+  border-radius: 20px;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--r), var(--l), #7c3aed);
+  box-shadow: 0 12px 30px rgba(0,0,0,.5), 0 0 25px rgba(196,181,253,.25);
+  transition: transform .15s ease-out, box-shadow .3s;
+}
+
+.card:hover {
+  box-shadow: 0 22px 50px rgba(225,29,72,.5), 0 0 40px rgba(196,181,253,.5);
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--lc);
+}
+
+.inner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.vacio {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--m);
+  font-weight: 700;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--lc),
+    var(--lc) 12px,
+    #ddd6fe 12px,
+    #ddd6fe 24px
+  );
+}
+
+.vacio b {
+  font-size: 54px;
+  color: var(--r);
+  line-height: 1;
+}
+
+.brillo {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255,255,255,.4),
+    transparent 55%
+  );
+}
+
+.card:hover .brillo {
+  opacity: 1;
+}
+
+.num {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--r);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  box-shadow: 0 3px 10px rgba(0,0,0,.45);
+}
+
+/* ---------- Mensaje ---------- */
+
+.mensaje {
+  max-width: 700px;
+  margin: 0 auto 110px;
+  padding: 38px 30px;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(196,181,253,.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 50px rgba(225,29,72,.25);
+}
+
+.mensaje .corazon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 10px;
+  animation: latido 1.2s infinite;
+}
+
+@keyframes latido {
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+/* ---------- Lightbox ---------- */
+
+.luz {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,0,30,.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  padding: 20px;
+  cursor: zoom-out;
+}
+
+.luz.on {
+  display: flex;
+}
+
+.luz img {
+  max-width: 100%;
+  max-height: 90vh;
+  border: 6px solid #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 70px var(--r);
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="fx"></canvas>
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+
+<section class="hero" id="hero">
+
+  <div class="feliz">¡ Feliz !</div>
+
+  <h1 class="titulo">CUMPLEAÑOS</h1>
+
+  <div class="nombre" id="nombre"></div>
+
+  <div class="pastel" id="pastel">
+
+    <div class="velas">
+      <div class="vela"><i class="flama"></i></div>
+      <div class="vela"><i class="flama"></i></div>
+      <div class="vela"><i class="flama"></i></div>
+    </div>
+
+    <div class="capa c3"></div>
+    <div class="capa c2"></div>
+    <div class="capa c1"></div>
+
+    <div class="plato"></div>
+
+  </div>
+
+  <button class="btn" id="btnSoplar">
+    🎂 ¡Sopla las velas!
+  </button>
+
+  <div class="bajar">
+    ↓ mira las fotos ↓
+  </div>
+
+</section>
+
+<div class="banda">
+  <div id="marquesina"></div>
+</div>
+
+<section class="galeria">
+
+  <h2>Fotos destacables 💜</h2>
+
+  <div class="grid" id="grid"></div>
+
+</section>
+
+<section class="mensaje reveal">
+
+  <span class="corazon">💜</span>
+
+  <p id="mensaje"></p>
+
+</section>
+
+<div class="luz" id="luz">
+  <img id="luzImg" alt="">
+</div>
+
+
+<script>
+
+// ====== PERSONALIZA AQUÍ ======
+
+const NOMBRE = "Trinidad Rosibeth Saravia";
+
+const MENSAJE =
+"Que este nuevo año de vida esté lleno de alegría, amor y momentos inolvidables. ¡Te aprecio mucho futura enfermera!";
+
+// Coloca aquí las 8 fotos.
+// Deben estar dentro de una carpeta llamada "fotos".
+
+const FOTOS = [
+  "Fotos/1.jpeg",
+  "Fotos/2.jpeg",
+  "Fotos/3.jpeg",
+  "Fotos/4.jpeg",
+  "Fotos/5.jpeg",
+  "Fotos/6.jpeg",
+  "Fotos/7.jpeg",
+  "Fotos/8.jpeg"
+];
+
+// ===============================
+
+
+document.getElementById("nombre").textContent =
+  "✨ " + NOMBRE + " ✨";
+
+document.getElementById("mensaje").textContent =
+  MENSAJE;
+
+
+// --- Marquesina ---
+
+const marq = document.getElementById("marquesina");
+
+for (let i = 0; i < 16; i++) {
+
+  const s = document.createElement("span");
+
+  s.textContent =
+    i % 2 === 0
+      ? "🎉 FELIZ CUMPLEAÑOS"
+      : "✨ " + NOMBRE.toUpperCase();
+
+  marq.appendChild(s);
+
+}
+
+
+// --- Lightbox ---
+
+const luz = document.getElementById("luz");
+
+const luzImg = document.getElementById("luzImg");
+
+luz.addEventListener("click", () => {
+  luz.classList.remove("on");
+});
+
+
+// --- Galería ---
+
+const grid = document.getElementById("grid");
+
+FOTOS.forEach((src, i) => {
+
+  const item = document.createElement("div");
+
+  item.className = "item";
+
+  item.style.transitionDelay =
+    (i % 4) * 0.12 + "s";
+
+
+  item.innerHTML =
+    '<div class="card">' +
+      '<div class="inner">' +
+
+        '<span class="num">' +
+          (i + 1) +
+        '</span>' +
+
+        '<div class="vacio">' +
+          '<b>+</b>' +
+          '<span>Foto ' +
+          (i + 1) +
+          '</span>' +
+        '</div>' +
+
+        '<div class="brillo"></div>' +
+
+      '</div>' +
+    '</div>';
+
+
+  grid.appendChild(item);
+
+
+  const card =
+    item.querySelector(".card");
+
+  const inner =
+    item.querySelector(".inner");
+
+
+  let tieneFoto = false;
+
+
+  const poner = (url) => {
+
+    let img =
+      inner.querySelector("img");
+
+
+    if (!img) {
+
+      img =
+        document.createElement("img");
+
+      inner.prepend(img);
+
+    }
+
+
+    img.onerror = () => {
+
+      img.remove();
+
+      tieneFoto = false;
+
+      const v =
+        inner.querySelector(".vacio");
+
+      if (v)
+        v.style.display = "";
+
+    };
+
+
+    img.src = url;
+
+
+    const v =
+      inner.querySelector(".vacio");
+
+    if (v)
+      v.style.display = "none";
+
+
+    tieneFoto = true;
+
+  };
+
+
+  if (src)
+    poner(src);
+
+
+  // Al presionar una foto solamente se abre.
+  // Ya NO existe la opción para cambiarla.
+
+  card.addEventListener("click", () => {
+
+    if (tieneFoto) {
+
+      luzImg.src =
+        inner.querySelector("img").src;
+
+      luz.classList.add("on");
+
+    }
+
+  });
+
+
+  // Efecto 3D
+
+  card.addEventListener("mousemove", (e) => {
+
+    const r =
+      card.getBoundingClientRect();
+
+    const x =
+      (e.clientX - r.left) / r.width;
+
+    const y =
+      (e.clientY - r.top) / r.height;
+
+
+    card.style.transform =
+      "perspective(800px) " +
+      "rotateY(" +
+      ((x - 0.5) * 22) +
+      "deg) rotateX(" +
+      ((0.5 - y) * 22) +
+      "deg) scale(1.05)";
+
+
+    card.style.setProperty(
+      "--gx",
+      x * 100 + "%"
+    );
+
+    card.style.setProperty(
+      "--gy",
+      y * 100 + "%"
+    );
+
+  });
+
+
+  card.addEventListener("mouseleave", () => {
+
+    card.style.transform = "";
+
+  });
+
+});
+
+
+// --- Aparecer al hacer scroll ---
+
+const obs =
+  new IntersectionObserver(
+    (entradas) => {
+
+      entradas.forEach((en) => {
+
+        if (en.isIntersecting)
+          en.target.classList.add("visible");
+
+      });
+
+    },
+    { threshold: 0.15 }
+  );
+
+
+document
+  .querySelectorAll(".item")
+  .forEach((el) => obs.observe(el));
+
+
+// --- Fuegos artificiales y confeti ---
+
+const canvas =
+  document.getElementById("fx");
+
+const ctx =
+  canvas.getContext("2d");
+
+
+const colores = [
+  "#e11d48",
+  "#fb7185",
+  "#c4b5fd",
+  "#a78bfa",
+  "#7c3aed",
+  "#ffffff"
+];
+
+
+let chispas = [];
+
+let confeti = [];
+
+
+function ajustar() {
+
+  canvas.width =
+    innerWidth;
+
+  canvas.height =
+    innerHeight;
+
+}
+
+
+addEventListener(
+  "resize",
+  ajustar
+);
+
+ajustar();
+
+
+function explotar(x, y) {
+
+  const c1 =
+    colores[
+      Math.floor(
+        Math.random() *
+        colores.length
+      )
+    ];
+
+
+  const c2 =
+    colores[
+      Math.floor(
+        Math.random() *
+        colores.length
+      )
+    ];
+
+
+  for (let i = 0; i < 80; i++) {
+
+    const a =
+      Math.random() *
+      Math.PI * 2;
+
+    const v =
+      1.5 +
+      Math.random() * 5.5;
+
+
+    chispas.push({
+
+      x: x,
+
+      y: y,
+
+      vx:
+        Math.cos(a) * v,
+
+      vy:
+        Math.sin(a) * v,
+
+      vida: 1,
+
+      color:
+        i % 2 ? c1 : c2,
+
+      t:
+        2 +
+        Math.random() * 2
+
+    });
+
+  }
+
+}
+
+
+function lluvia(n) {
+
+  for (let i = 0; i < n; i++) {
+
+    confeti.push({
+
+      x:
+        Math.random() *
+        canvas.width,
+
+      y:
+        -20 -
+        Math.random() *
+        canvas.height *
+        0.4,
+
+      w:
+        6 +
+        Math.random() * 8,
+
+      h:
+        10 +
+        Math.random() * 10,
+
+      vy:
+        2 +
+        Math.random() * 3.5,
+
+      vx:
+        -1.5 +
+        Math.random() * 3,
+
+      g:
+        Math.random() *
+        Math.PI,
+
+      vg:
+        -0.15 +
+        Math.random() * 0.3,
+
+      color:
+        colores[
+          Math.floor(
+            Math.random() *
+            colores.length
+          )
+        ]
+
+    });
+
+  }
+
+}
+
+
+function loop() {
+
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+
+  chispas.forEach((p) => {
+
+    p.x += p.vx;
+
+    p.y += p.vy;
+
+    p.vy += 0.07;
+
+    p.vx *= 0.99;
+
+    p.vida -= 0.014;
+
+
+    ctx.globalAlpha =
+      Math.max(p.vida, 0);
+
+    ctx.shadowBlur = 12;
+
+    ctx.shadowColor =
+      p.color;
+
+    ctx.fillStyle =
+      p.color;
+
+
+    ctx.beginPath();
+
+    ctx.arc(
+      p.x,
+      p.y,
+      p.t,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fill();
+
+  });
+
+
+  ctx.shadowBlur = 0;
+
+  ctx.globalAlpha = 1;
+
+
+  confeti.forEach((p) => {
+
+    p.y += p.vy;
+
+    p.x += p.vx;
+
+    p.g += p.vg;
+
+
+    ctx.save();
+
+    ctx.translate(
+      p.x,
+      p.y
+    );
+
+    ctx.rotate(p.g);
+
+    ctx.scale(
+      1,
+      Math.cos(p.g * 2)
+    );
+
+
+    ctx.fillStyle =
+      p.color;
+
+
+    ctx.fillRect(
+      -p.w / 2,
+      -p.h / 2,
+      p.w,
+      p.h
+    );
+
+
+    ctx.restore();
+
+  });
+
+
+  chispas =
+    chispas.filter(
+      (p) => p.vida > 0
+    );
+
+
+  confeti =
+    confeti.filter(
+      (p) =>
+        p.y <
+        canvas.height + 30
+    );
+
+
+  requestAnimationFrame(loop);
+
+}
+
+
+loop();
+
+
+function salva(veces) {
+
+  for (let i = 0; i < veces; i++) {
+
+    setTimeout(() => {
+
+      explotar(
+
+        innerWidth *
+          (0.1 +
+          Math.random() * 0.8),
+
+        innerHeight *
+          (0.1 +
+          Math.random() * 0.5)
+
+      );
+
+    }, i * 280);
+
+  }
+
+}
+
+
+// Clic en el hero = fuegos artificiales
+
+document
+  .getElementById("hero")
+  .addEventListener(
+    "click",
+    (e) => {
+
+      if (
+        e.target.closest("button")
+      )
+        return;
+
+      explotar(
+        e.clientX,
+        e.clientY
+      );
+
+    }
+  );
+
+
+// Botón de soplar velas
+
+const pastel =
+  document.getElementById("pastel");
+
+const btn =
+  document.getElementById("btnSoplar");
+
+
+btn.addEventListener(
+  "click",
+  () => {
+
+    pastel.classList.toggle(
+      "apagado"
+    );
+
+
+    if (
+      pastel.classList.contains(
+        "apagado"
+      )
+    ) {
+
+      btn.textContent =
+        "🔥 Prender de nuevo";
+
+      salva(9);
+
+      lluvia(220);
+
+    } else {
+
+      btn.textContent =
+        "🎂 ¡Sopla las velas!";
+
+    }
+
+  }
+);
+
+
+// Bienvenida
+
+setTimeout(
+  () => {
+
+    salva(4);
+
+    lluvia(120);
+
+  },
+  500
+);
+
+</script>
+
+</body>
+</html>
